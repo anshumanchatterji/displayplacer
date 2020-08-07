@@ -42,15 +42,18 @@ void listScreens() {
         for (int i = 0; i < modeCount; i++) {
             modes_D4 mode = modes[i];
 
-            printf("%dx%d",mode.derived.width, mode.derived.height);
+            if(mode.derived.width > 1) {
+                printf("%dx%d",mode.derived.width, mode.derived.height);
+            }
+
 
             if (i == curModeId) {
-                printf(" <-- current mode");
+                // printf(" <-- current mode");
             }
 
             printf("\n");
         }
-        printf("\n");
+        // printf("\n");
     }
 }
 
